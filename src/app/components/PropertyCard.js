@@ -5,11 +5,11 @@ import { IconBed, IconBath, IconSquare, IconEye, IconEdit, IconTrash } from "./I
 
 export default function PropertyCard({ property }) {
   const { title, price, type, status, beds, baths, sqft, views, image } = property;
-  const statusColor = status === "Available" ? "green" : status === "Pending" ? "yellow" : "red";
+  const statusColor = status === "Available" ? "emerald" : status === "Pending" ? "amber" : "rose";
 
   return (
-    <div className="rounded-lg border border-black/10 overflow-hidden bg-white flex flex-col shadow-sm">
-      <div className="relative aspect-[4/3]">
+    <div className="rounded-lg border border-black/10 bg-white flex flex-col shadow-sm overflow-hidden">
+      <div className="relative aspect-[4/3] overflow-hidden rounded-t-lg">
         <Image src={image} alt={title} fill className="object-cover" />
       </div>
       <div className="p-4 flex flex-col gap-3">
@@ -27,10 +27,10 @@ export default function PropertyCard({ property }) {
           <span className="inline-flex items-center gap-1 text-blue-600"><IconSquare /><span className="text-neutral-600">{sqft.toLocaleString()}</span></span>
           <span className="ml-auto inline-flex items-center gap-1 text-blue-600"><IconEye /><span className="text-neutral-600">{views}</span></span>
         </div>
-        <div className="flex gap-2 pt-1">
-          <Button variant="ghost" size="sm" leadingIcon={IconEye}>View</Button>
-          <Button variant="outline" size="sm" leadingIcon={IconEdit}>Edit</Button>
-          <Button variant="destructive" size="sm" leadingIcon={IconTrash}>Delete</Button>
+        <div className="flex items-stretch gap-2 pt-2">
+          <Button variant="ghost" size="xs" className="flex-1 basis-0 min-w-0" leadingIcon={IconEye}>View</Button>
+          <Button variant="outline" size="xs" className="flex-1 basis-0 min-w-0" leadingIcon={IconEdit}>Edit</Button>
+          <Button variant="destructive" size="xs" className="flex-1 basis-0 min-w-0" leadingIcon={IconTrash}>Delete</Button>
         </div>
       </div>
     </div>
