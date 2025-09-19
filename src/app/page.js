@@ -141,16 +141,16 @@ export default function DashboardPage() {
         <section>
           <div className="flex items-center justify-between mb-3">
             <h2 className="text-sm font-semibold text-neutral-800">Recent Properties</h2>
-          </div>
+        </div>
           {recent.length === 0 ? (
             <div className="text-center text-sm text-black/60 dark:text-white/60 py-12">No recent properties.</div>
-          ) : (
-            <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 lg:grid-cols-3 gap-4">
+        ) : (
+          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 lg:grid-cols-3 gap-4">
               {recent.map((p) => (
-                <PropertyCard key={p.id} property={p} />
-              ))}
-            </div>
-          )}
+              <PropertyCard key={p.id} property={p} />
+            ))}
+          </div>
+        )}
         </section>
       </div>
     </div>
