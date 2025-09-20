@@ -4,12 +4,18 @@ import { useState } from 'react';
 import LeadCard from "../components/LeadCard.js";
 import LeadDetailsPanel from "../components/LeadDetailsPanel.js";
 
+const categories = [
+  { key: "newLeads", label: "New Leads", tag: "hot" },
+  { key: "contacted", label: "Contacted", tag: "warm" },
+  { key: "qualified", label: "Qualified", tag: "qualified" },
+  { key: "proposal", label: "Proposal Sent", tag: "proposal" },
+];
 
 const leadsData = {
   newLeads: [
     { id: 1, name: 'Alice Smith', email: 'alice@example.com', phone: '+1 (555) 123-456', lastContact: '2024-07-24' },
     { id: 2, name: 'Bob Johnson', email: 'bob@example.com', phone: '+1 (555) 987-654', lastContact: '2024-07-21' },
-    { id: 3, name: 'Charlie Brown', email: 'charlie@example.com', phone: '+1 (555) 456-789', lastContact: '2024-07-26' }
+    { id: 3, name: 'Charlie Brown', email: 'charlie@example.com', phone: '+1 (555) 456-789', lastContact: '2024-07-26', }
   ],
   contacted: [
     { id: 4, name: 'Alice Smith', email: 'alice@contacted.com', phone: '+1 (555) 111-222', lastContact: '2024-07-28' },
@@ -64,6 +70,7 @@ export default function LeadManagementPage() {
                       lead={lead}
                       isSelected={selectedLead?.id === lead.id}
                       onSelect={handleLeadSelect}
+                      tag="hot"
                     />
                   ))}
                 </div>
@@ -86,6 +93,7 @@ export default function LeadManagementPage() {
                       lead={lead}
                       isSelected={selectedLead?.id === lead.id}
                       onSelect={handleLeadSelect}
+                      tag="warm"
                     />
                   ))}
                 </div>
@@ -108,6 +116,7 @@ export default function LeadManagementPage() {
                       lead={lead}
                       isSelected={selectedLead?.id === lead.id}
                       onSelect={handleLeadSelect}
+                      tag="qualified"
                     />
                   ))}
                 </div>
@@ -129,6 +138,7 @@ export default function LeadManagementPage() {
                       lead={lead}
                       isSelected={selectedLead?.id === lead.id}
                       onSelect={handleLeadSelect}
+                      tag="proposal"
                     />
                   ))}
                 </div>

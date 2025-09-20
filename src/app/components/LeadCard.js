@@ -1,7 +1,7 @@
 
 "use client";
 import { useState } from 'react';
-
+import Tag from './Tag.js';
 // Icons
 const IconEmail = ({ className }) => (
   <svg className={`w-4 h-4 ${className}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -16,7 +16,7 @@ const IconPhone = ({ className }) => (
 );
 
 // LeadCard Component
-export default function LeadCard({ lead, isSelected, onSelect }) {
+export default function LeadCard({ lead, isSelected, onSelect,tag }) {
   return (
     <div
       className={`p-3 border rounded-lg cursor-pointer transition-colors ${isSelected
@@ -27,7 +27,7 @@ export default function LeadCard({ lead, isSelected, onSelect }) {
     >
       <div className="flex items-center justify-between mb-2">
         <h3 className="font-medium text-sm text-gray-900">{lead.name}</h3>
-        <span className="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded">New</span>
+      {tag && <Tag kind={tag} />}
       </div>
 
       <div className="space-y-1 text-xs text-gray-600">
