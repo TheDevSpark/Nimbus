@@ -1,8 +1,8 @@
 "use client";
 import { useState } from 'react';
 
-import LeadCard from "../components/LeadCard.js";
-import LeadDetailsPanel from "../components/LeadDetailsPanel.js";
+import LeadCard from "../components/Lead-management-comp/LeadCard.js";
+import LeadDetailsPanel from "../components/Lead-management-comp/LeadDetailsPanel.js";
 
 const categories = [
   { key: "newLeads", label: "New Leads", tag: "hot" },

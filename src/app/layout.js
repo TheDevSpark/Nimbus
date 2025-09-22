@@ -22,7 +22,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <div className="flex flex-col bg-red-700 ">
+        <div className="flex flex-col  bg-white">
 
           {/* Top Navbar */}
           <Navbar />
@@ -32,7 +32,7 @@ export default function RootLayout({ children }) {
             <Sidebar />
 
             {/* Page Content (right) */}
-            <main className="flex-1 p-4 bg-gray-50 text-black">
+            <main className="flex-1 p-4  bg-white text-black">
               {children}
             </main>
           </div>
